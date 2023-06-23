@@ -1,0 +1,32 @@
+{
+  "changelogDate": "20230622160339",
+  "dto": "no",
+  "entityTableName": "filmato",
+  "fields": [
+    {
+      "fieldName": "blob",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any",
+      "fieldValidateRules": []
+    },
+    {
+      "fieldName": "nome_file",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Filmato",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "concerto",
+      "relationshipName": "concerto",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

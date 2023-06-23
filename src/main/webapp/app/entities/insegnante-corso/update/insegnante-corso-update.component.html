@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-insegnante-corso-heading" data-cy="InsegnanteCorsoCreateUpdateHeading">Create or edit a Insegnante Corso</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_id_insegnante">Id Insegnante</label>
+          <input
+            type="number"
+            class="form-control"
+            name="id_insegnante"
+            id="field_id_insegnante"
+            data-cy="id_insegnante"
+            formControlName="id_insegnante"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_id_corso">Id Corso</label>
+          <input type="number" class="form-control" name="id_corso" id="field_id_corso" data-cy="id_corso" formControlName="id_corso" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_mese">Mese</label>
+          <input type="number" class="form-control" name="mese" id="field_mese" data-cy="mese" formControlName="mese" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

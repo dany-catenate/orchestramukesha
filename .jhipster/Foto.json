@@ -1,0 +1,31 @@
+{
+  "changelogDate": "20230622160156",
+  "dto": "no",
+  "entityTableName": "foto",
+  "fields": [
+    {
+      "fieldName": "blob",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "nome_file",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Foto",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "concerto",
+      "relationshipName": "concerto",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

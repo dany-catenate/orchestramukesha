@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="insegnanteCorso">
+      <h2 data-cy="insegnanteCorsoDetailsHeading"><span>Insegnante Corso</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ insegnanteCorso.id }}</span>
+        </dd>
+        <dt><span>Id Insegnante</span></dt>
+        <dd>
+          <span>{{ insegnanteCorso.id_insegnante }}</span>
+        </dd>
+        <dt><span>Id Corso</span></dt>
+        <dd>
+          <span>{{ insegnanteCorso.id_corso }}</span>
+        </dd>
+        <dt><span>Mese</span></dt>
+        <dd>
+          <span>{{ insegnanteCorso.mese }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/insegnante-corso', insegnanteCorso.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

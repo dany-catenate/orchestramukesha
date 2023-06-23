@@ -1,0 +1,44 @@
+{
+  "changelogDate": "20230622160021",
+  "dto": "no",
+  "entityTableName": "concerto",
+  "fields": [
+    {
+      "fieldName": "data",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Concerto",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "foto",
+      "otherEntityRelationshipName": "concerto",
+      "relationshipName": "foto",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "filmato",
+      "otherEntityRelationshipName": "concerto",
+      "relationshipName": "filmato",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "corso",
+      "relationshipName": "corso",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

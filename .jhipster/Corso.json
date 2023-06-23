@@ -1,0 +1,22 @@
+{
+  "changelogDate": "20230622154136",
+  "dto": "no",
+  "entityTableName": "corso",
+  "fields": [
+    {
+      "fieldName": "anno",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Corso",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

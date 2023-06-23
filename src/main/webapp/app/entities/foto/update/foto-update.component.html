@@ -1,0 +1,77 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-foto-heading" data-cy="FotoCreateUpdateHeading">Create or edit a Foto</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_blob">Blob</label>
+          <div>
+            <img
+              [src]="'data:' + editForm.get('blobContentType')!.value + ';base64,' + editForm.get('blob')!.value"
+              style="max-height: 100px"
+              *ngIf="editForm.get('blob')!.value"
+              alt="foto image"
+            />
+            <div *ngIf="editForm.get('blob')!.value" class="form-text text-danger clearfix">
+              <span class="pull-start">{{ editForm.get('blobContentType')!.value }}, {{ byteSize(editForm.get('blob')!.value!) }}</span>
+              <button
+                type="button"
+                (click)="clearInputImage('blob', 'blobContentType', 'file_blob')"
+                class="btn btn-secondary btn-xs pull-end"
+              >
+                <fa-icon icon="times"></fa-icon>
+              </button>
+            </div>
+            <input type="file" id="file_blob" data-cy="blob" (change)="setFileData($event, 'blob', true)" accept="image/*" />
+          </div>
+          <input type="hidden" class="form-control" name="blob" id="field_blob" data-cy="blob" formControlName="blob" />
+          <input type="hidden" class="form-control" name="blobContentType" id="field_blobContentType" formControlName="blobContentType" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_nome_file">Nome File</label>
+          <input type="text" class="form-control" name="nome_file" id="field_nome_file" data-cy="nome_file" formControlName="nome_file" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_concerto">Concerto</label>
+          <select
+            class="form-control"
+            id="field_concerto"
+            data-cy="concerto"
+            name="concerto"
+            formControlName="concerto"
+            [compareWith]="compareConcerto"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="concertoOption" *ngFor="let concertoOption of concertosSharedCollection">{{ concertoOption.id }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+{
+  "changelogDate": "20230622160811",
+  "dto": "no",
+  "entityTableName": "cliente_corso",
+  "fields": [
+    {
+      "fieldName": "id_cliente",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "id_corso",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "mese",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "pagato",
+      "fieldType": "Boolean"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "ClienteCorso",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

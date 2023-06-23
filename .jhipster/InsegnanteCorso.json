@@ -1,0 +1,26 @@
+{
+  "changelogDate": "20230622160522",
+  "dto": "no",
+  "entityTableName": "insegnante_corso",
+  "fields": [
+    {
+      "fieldName": "id_insegnante",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "id_corso",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "mese",
+      "fieldType": "Integer"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "InsegnanteCorso",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,45 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="filmato">
+      <h2 data-cy="filmatoDetailsHeading"><span>Filmato</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ filmato.id }}</span>
+        </dd>
+        <dt><span>Blob</span></dt>
+        <dd>
+          <div *ngIf="filmato.blob">
+            <a (click)="openFile(filmato.blob, filmato.blobContentType)">Open</a>
+            {{ filmato.blobContentType }}, {{ byteSize(filmato.blob) }}
+          </div>
+        </dd>
+        <dt><span>Nome File</span></dt>
+        <dd>
+          <span>{{ filmato.nome_file }}</span>
+        </dd>
+        <dt><span>Concerto</span></dt>
+        <dd>
+          <div *ngIf="filmato.concerto">
+            <a [routerLink]="['/concerto', filmato.concerto.id, 'view']">{{ filmato.concerto.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/filmato', filmato.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
